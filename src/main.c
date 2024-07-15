@@ -1,5 +1,5 @@
-int main(){
-    
-    //linking test
-    return 0;
+void os_Starts(void);
+
+void os_Starts(void){
+
 }

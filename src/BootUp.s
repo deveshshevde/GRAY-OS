@@ -3,12 +3,12 @@
 start:
     mrs	x0, mpidr_el1
     /*
-    The MPIDR_EL1 (Multiprocessor Affinity Register) is a system register 
-    in the ARM architecture that provides information about the identity 
-    and topology of processors in a multiprocessor system. This register 
-    is essential for distinguishing between different cores and managing 
-    processor-specific operations.
-    */		
+     * The MPIDR_EL1 (Multiprocessor Affinity Register) is a system register 
+     * in the ARM architecture that provides information about the identity 
+     * and topology of processors in a multiprocessor system. This register 
+     * is essential for distinguishing between different cores and managing 
+     * processor-specific operations.
+     */		
 	and	x0, x0,#0xFF		
 	cbz	x0, main_core		
     // Isolation the cor4e ID by masking last 8bit
@@ -29,3 +29,8 @@ bss_mem_to_zero_loop:
     b.gt bss_mem_to_zero_loop ; do again and again 
 bss_mem_to_zero:
     ret 
+
+	ldr     x1, =start
+    mov     sp, x1 
+	bl	os_Starts
+	b 	halt		
