@@ -1,0 +1,2 @@
+//https://www.raspberrypi.com/documentation/computers/config_txt.html
+core_freq_min=500 
