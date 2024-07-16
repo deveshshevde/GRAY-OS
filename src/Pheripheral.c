@@ -30,3 +30,9 @@ void uart_trasmit(unsigned char data)
     while((*AUX_MU_LSR & 0x20) == 0);
     *AUX_MU_IO = data;
 }
+
+void delay( unsigned time){
+    for (int i = 0; i<time; i++){
+    asm volatile("nop");
+    }
+}

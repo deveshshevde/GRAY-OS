@@ -69,8 +69,8 @@
 
 
 void uart_init(void);
-
-
+void delay(unsigned time);
+ 
 
 
 #endif
