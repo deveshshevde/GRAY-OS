@@ -18,14 +18,23 @@
   */
 const unsigned int PHERIPHERAL_BASE_ADDR   = 0xFE000000; // which is 0x7e00000 acc. to datasheet
 
-/* Other registers addr*/
+/* These are only GPIO's register */
 
-#define GPFSEL0        (PHERIPHERAL_BASE_ADDR + 0x200000)
-/*
-* will define later!!
-/
-/
-/
-/
-/
-*/
+#define GPFSEL0        ((__IO unsigned int *)(PHERIPHERAL_BASE_ADDR + 0x200000))
+#define GPFSEL1        ((__IO unsigned int *)(PHERIPHERAL_BASE_ADDR + 0x200004))
+#define GPFSEL2        ((__IO unsigned int *)(PHERIPHERAL_BASE_ADDR+0x00200008))
+#define GPFSEL3        ((__IO unsigned int *)(PHERIPHERAL_BASE_ADDR+0x0020000C))
+#define GPFSEL4        ((__IO unsigned int *)(PHERIPHERAL_BASE_ADDR+0x00200010))
+#define GPFSEL5        ((__IO unsigned int *)(PHERIPHERAL_BASE_ADDR+0x00200014))
+#define GPSET0         ((__IO unsigned int *)(PHERIPHERAL_BASE_ADDR+0x0020001C))
+#define GPSET1         ((__IO unsigned int *)(PHERIPHERAL_BASE_ADDR+0x00200020))
+#define GPCLR0         ((__IO unsigned int *)(PHERIPHERAL_BASE_ADDR+0x00200028))
+#define GPLEV0         ((__IO unsigned int *)(PHERIPHERAL_BASE_ADDR+0x00200034))
+#define GPLEV1         ((__IO unsigned int *)(PHERIPHERAL_BASE_ADDR+0x00200038))
+#define GPEDS0         ((__IO unsigned int *)(PHERIPHERAL_BASE_ADDR+0x00200040))
+#define GPEDS1         ((__IO unsigned int *)(PHERIPHERAL_BASE_ADDR+0x00200044))
+#define GPHEN0         ((__IO unsigned int *)(PHERIPHERAL_BASE_ADDR+0x00200064))
+#define GPHEN1         ((__IO unsigned int *)(PHERIPHERAL_BASE_ADDR+0x00200068))
+#define GPPUD          ((__IO unsigned int *)(PHERIPHERAL_BASE_ADDR+0x00200094))
+#define GPPUDCLK0      ((__IO unsigned int *)(PHERIPHERAL_BASE_ADDR+0x00200098))
+#define GPPUDCLK1      ((__IO unsigned int *)(PHERIPHERAL_BASE_ADDR+0x0020009C))
