@@ -1,3 +1,6 @@
+    #ifndef PHERIPHERAL_H
+    #define PHERIPHERAL_H
+    #include "main.h"
     /* 
     * pheripheral base address link :
     * https://forums.raspberrypi.com/viewtopic.php?t=244031
@@ -38,3 +41,29 @@ const unsigned int PHERIPHERAL_BASE_ADDR   = 0xFE000000; // which is 0x7e00000 a
 #define GPPUD          ((__IO unsigned int *)(PHERIPHERAL_BASE_ADDR+0x00200094))
 #define GPPUDCLK0      ((__IO unsigned int *)(PHERIPHERAL_BASE_ADDR+0x00200098))
 #define GPPUDCLK1      ((__IO unsigned int *)(PHERIPHERAL_BASE_ADDR+0x0020009C))
+
+
+/* Miny UART register definations */
+/* The AUX_ENABLES register is used to enable the three modules: UART1, SPI1, SPI2 */
+#define AUX_ENABLE      ((__IO unsigned int*)(PHERIPHERAL_BASE_ADDR+0x00215004))
+/* The AUX_MU_IO_REG register is primarily used to write data to and read data from the UART FIFOs */
+#define AUX_MU_IO       ((__IO unsigned int*)(PHERIPHERAL_BASE_ADDR+0x00215040))
+/* The AUX_MU_IER register is used to enable and disable interrupts in the UART FIFOs */
+#define AUX_MU_IER      ((__IO unsigned int*)(PHERIPHERAL_BASE_ADDR+0x00215044))
+/* The AUX_MU_IIR_REG register shows the interrupt status */
+#define AUX_MU_IIR      ((__IO unsigned int*)(PHERIPHERAL_BASE_ADDR+0x00215048))
+/* refer data sheet or update later*/
+#define AUX_MU_LCR      ((__IO unsigned int*)(PHERIPHERAL_BASE_ADDR+0x0021504C))
+#define AUX_MU_MCR      ((__IO unsigned int*)(PHERIPHERAL_BASE_ADDR+0x00215050))
+#define AUX_MU_LSR      ((__IO unsigned int*)(PHERIPHERAL_BASE_ADDR+0x00215054))
+#define AUX_MU_MSR      ((__IO unsigned int*)(PHERIPHERAL_BASE_ADDR+0x00215058))
+#define AUX_MU_SCRATCH  ((__IO unsigned int*)(PHERIPHERAL_BASE_ADDR+0x0021505C))
+#define AUX_MU_CNTL     ((__IO unsigned int*)(PHERIPHERAL_BASE_ADDR+0x00215060))
+#define AUX_MU_STAT     ((__IO unsigned int*)(PHERIPHERAL_BASE_ADDR+0x00215064))
+#define AUX_MU_BAUD     ((__IO unsigned int*)(PHERIPHERAL_BASE_ADDR+0x00215068))
+
+
+
+
+
+#endif
