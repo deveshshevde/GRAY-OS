@@ -19,7 +19,7 @@
     * 0x7E000000. Thus a peripheral advertised here at bus address 0x7Ennnnnn is available at
     * physical address 0x20nnnnnn.
   */
-const unsigned int PHERIPHERAL_BASE_ADDR   = 0xFE000000; // which is 0x7e00000 acc. to datasheet
+#define PHERIPHERAL_BASE_ADDR    0xFE000000U // which is 0x7e00000 acc. to datasheet
 
 /* These are only GPIO's register */
 
@@ -62,6 +62,13 @@ const unsigned int PHERIPHERAL_BASE_ADDR   = 0xFE000000; // which is 0x7e00000 a
 #define AUX_MU_STAT     ((__IO unsigned int*)(PHERIPHERAL_BASE_ADDR+0x00215064))
 #define AUX_MU_BAUD     ((__IO unsigned int*)(PHERIPHERAL_BASE_ADDR+0x00215068))
 
+
+
+
+
+
+
+void uart_init(void);
 
 
 
