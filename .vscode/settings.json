@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "pheripheral.h": "c",
+        "main.h": "c",
+        "timer.h": "c",
+        "irq.h": "c"
+    }
+}

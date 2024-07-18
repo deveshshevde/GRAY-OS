@@ -1,0 +1,23 @@
+#ifndef TIMER_H
+#define TIMER_H
+
+#define TIMER_CS        (PHERIPHERAL_BASE_ADDR+0x00003000)
+#define TIMER_CLO       (PHERIPHERAL_BASE_ADDR+0x00003004)
+#define TIMER_CHI       (PHERIPHERAL_BASE_ADDR+0x00003008)
+#define TIMER_C0        (PHERIPHERAL_BASE_ADDR+0x0000300C)
+#define TIMER_C1        (PHERIPHERAL_BASE_ADDR+0x00003010)
+#define TIMER_C2        (PHERIPHERAL_BASE_ADDR+0x00003014)
+#define TIMER_C3        (PHERIPHERAL_BASE_ADDR+0x00003018)
+
+
+/* PAGE NUMBER : 173 */
+#define TIMER_CS_MATCH0	(1 << 0)
+#define TIMER_CS_MATCH1	(1 << 1)
+#define TIMER_CS_MATCH2	(1 << 2)
+#define TIMER_CS_MATCH3	(1 << 3)
+
+
+void timer_start(void);
+
+
+#endif

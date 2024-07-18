@@ -1,6 +1,7 @@
 #include "../include/main.h"
 #include "../include/print.h"
 #include "../include/IRQ.h"
+#include "../include/timer.h"
 /**
  * Writes the given value to the memory location specified by the given register.
  *
@@ -9,7 +10,7 @@
  *
  * @throws None
  */
-void write_mem(long reg, unsigned int val) 
+static inline void write_mem(long reg, unsigned int val) 
 {
      *(volatile unsigned int *)reg = val; 
 }
@@ -22,7 +23,7 @@ void write_mem(long reg, unsigned int val)
  *
  * @throws None
  */
-unsigned int read_mem(long reg) 
+static inline unsigned int read_mem(long reg) 
 { 
     return *(volatile unsigned int *)reg; 
 }
