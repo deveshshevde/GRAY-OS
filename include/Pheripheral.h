@@ -69,8 +69,9 @@
 
 
 void uart_init(void);
+char uart_receive ( void );
 void delay(unsigned time);
- 
+void transmit_strig(const char *string);
 
 
 #endif

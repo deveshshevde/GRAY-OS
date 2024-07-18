@@ -1,3 +1,6 @@
+.section ".boot"
+
+
 .global start
 
 start:

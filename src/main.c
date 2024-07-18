@@ -3,15 +3,14 @@
 
 void os_Starts(void);
 
+int uninitialized_variable;
 
 void os_Starts(void){
     uart_init();
+    transmit_strig("Gray-OS is Booting HAHA!!\n");
     while (1)
     {   
-        char x = 'a';
-        uart_trasmit('x');
-        x++;
-        delay(1000);
+        uart_trasmit(uart_receive());
     }
 
 }

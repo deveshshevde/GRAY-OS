@@ -19,9 +19,8 @@ TODO: Instruction to setup toolchain for macOS
 
 SECTIONS
 {
-	/* Must add boot section whether it is called or not */
-	/* Keep this section anyway or you can remove KEEP as it is already refrence */
-	.text.boot : { KEEP(*(.text.boot)) }
+
+	.boot : { *(.boot) }
 	/* text section of elf file*/
 	.text : { *(.text) }
 	/* read only section of elf file*/
