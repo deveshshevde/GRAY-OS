@@ -1,3 +1,4 @@
+#include "../include/main.h"
 /**
  * Writes the given value to the memory location specified by the given register.
  *
@@ -22,4 +23,16 @@ void write_mem(long reg, unsigned int val)
 unsigned int read_mem(long reg) 
 { 
     return *(volatile unsigned int *)reg; 
+}
+
+uint64_t get_exception_level(void) {
+    uint64_t el;
+    asm volatile(
+        "mrs %0, CurrentEL\n"
+        "lsr %0, %0, #2\n"
+        : "=r" (el) // Output operand
+        : // No input operands
+        : "x0" // Clobbered register
+    );
+    return el;
 }
