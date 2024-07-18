@@ -1,5 +1,6 @@
 #include "../include/main.h"
 #include "../include/print.h"
+#include "../include/IRQ.h"
 /**
  * Writes the given value to the memory location specified by the given register.
  *
