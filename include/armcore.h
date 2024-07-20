@@ -25,6 +25,26 @@
 #define SCR_MMU_DISABLED            (0 << 0)
 #define SCR_MMU_ENABLED             (1 << 0)
 
- 
+#define SCR_VALUE_MMU_DISABLED	(SCR_EL1_RES1 | SCR_EE_LITTLE_ENDIAN | SCR_INSTRCTION_CACHE_EN | SCR_INSTRCTION_CACHE_DIS | SCR_MMU_DISABLED)
+#define SCR_VALUE_MMU_ENABLED	(SCR_EL1_RES1 | SCR_EE_LITTLE_ENDIAN | SCR_INSTRCTION_CACHE_EN | SCR_INSTRCTION_CACHE_DIS | SCR_MMU_ENABLED)
+
+
+
+#define HCR_VALUE			(1<<31)
+
+/*
+    * FOR EL3
+    * Other register should me added  
+*/
+
+#define SECURE_CONFIG_RESER   ((1<<5) | (1<<4))
+#define SECURE_CONFIG_RW	  (1 << 10)
+#define SECURE_CONFIG_NS	  (1 << 0)
+#define SCR_VALUE	    	   (SECURE_CONFIG_RESER | SECURE_CONFIG_RW | SECURE_CONFIG_NS)
+
+
+#define SPSR_MASK_ALL 		(7 << 6)
+#define SPSR_EL1h			(5 << 0)
+#define SPSR_VALUE			(SPSR_MASK_ALL | SPSR_EL1h)
 
 #endif

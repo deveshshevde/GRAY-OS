@@ -35,3 +35,9 @@ kernelV8.img: $(SRC_DIR)/linker.ld $(OBJ_FILES)
 
 qemu:
 	qemu-system-aarch64 -M raspi4b -kernel kernelV8.img -serial null -serial stdio 
+
+add:
+	git add .
+
+push:
+	git push
